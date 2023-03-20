@@ -2,7 +2,7 @@
 
 ## Description
 
-Work-Day Scheduler is a task-managing web-application. Within the page you may
+Work-Day Scheduler is a task-managing web-application. Within the page you may assign tasks within the time slots given.
 
 ## Installation
 
