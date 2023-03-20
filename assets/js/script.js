@@ -3,7 +3,7 @@ $(document).ready(function () {
   $(".saveBtn").on("click", function () {
     var task = $(this).siblings(".description").val();
     var hour = $(this).parent().attr("id");
-
+    // This sets a value in the local storage for the tasks made in the textareas by the user
     localStorage.setItem(hour, task);
   });
 
@@ -13,11 +13,20 @@ $(document).ready(function () {
     var currentHour = dayjs().format("H");
     console.log(currentHour);
 
+    // Should there be a glitch that makes the dayjs unusable, the error could be caught
+    if (currentHour != parseInt(currentHour)) {
+      $(".display-3").text("Hmm...Sorry, not sure what happened");
+      console.log(
+        "Var currentHour: " + currentHour + " is not a parseable interger"
+      );
+      return;
+    }
+
     // Loops over time blocks to evaluate time status
     $(".time-block").each(function () {
       var taskTime = parseInt($(this).attr("id").split("hour-")[1]);
       console.log(taskTime);
-      console.log("line 30");
+      // console.log("line 30");
 
       // if tests the current hour only and compares it to the iteration of tasktime during loop run
       // If greater than, makes it green via class change
