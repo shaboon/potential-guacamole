@@ -1,7 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
 $(document).ready(function () {
   // Code to save when saveBtn is clicked
   $(".saveBtn").on("click", function () {
@@ -46,13 +42,6 @@ $(document).ready(function () {
     });
   }
 
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-
-  //
-
   // Code to pull all local-saved tasks
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -63,7 +52,6 @@ $(document).ready(function () {
   $("#hour-15 .description").val(localStorage.getItem("hour-15"));
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
   $("#hour-17 .description").val(localStorage.getItem("hour-17"));
-  $("#hour-18 .description").val;
 
   //Code for header date, current time excluded to avoid interval/constant update
   var date = document.querySelector("#currentDay");
